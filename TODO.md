@@ -12,11 +12,11 @@ Check them off as you go.
 
 ### Week 1 — Project & Map
 
-- [ ] **Day 1 — Project scaffold**
+- [x] **Day 1 — Project scaffold**
   Create Godot 4.x project. Set up the scene tree from the GDD (Main → Map, Network, Trees, Competitors, Camera, HUD, AudioManager). Configure the Camera2D with zoom limits and edge-pan or middle-click drag. Export to HTML5 once to confirm the pipeline works.
   *Done when: you can pan and zoom over an empty scene in-browser.*
 
-- [ ] **Day 2 — TileMap with soil layers**
+- [x] **Day 2 — TileMap with soil layers**
   Create a TileMap with three tile types (Topsoil, Clay, Rock). Fill it procedurally in `_ready()` based on depth bands — top 30%, middle 40%, bottom 30%. Use distinct brown/grey/slate colours from the GDD palette.
   *Done when: you see three horizontal colour bands filling the screen.*
 

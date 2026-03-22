@@ -8,10 +8,8 @@ extends Camera2D
 @export var min_zoom: float = 2
 @export var max_zoom: float = 0.5
 
-@export var map_rect: Rect2 = Rect2(0, 0, 3840, 2560)
-
 func _ready() -> void:
-  position = Vector2(map_rect.size.x * 0.5, map_rect.size.y * 0.5);
+  position = Vector2(Config.map_rect.size.x * 0.5, Config.map_rect.size.y * 0.5);
 
 func _process(delta: float) -> void:
   _handle_pan(delta)
@@ -62,5 +60,5 @@ func _clamp_position() -> void:
   var vp_size = get_viewport_rect().size
   var half_view = vp_size / (2.0 * zoom.x)
 
-  position.x = clampf(position.x, map_rect.position.x + half_view.x, map_rect.end.x - half_view.x)
-  position.y = clampf(position.y, map_rect.position.y + half_view.y, map_rect.end.y - half_view.y)
+  position.x = clampf(position.x, Config.map_rect.position.x + half_view.x, Config.map_rect.end.x - half_view.x)
+  position.y = clampf(position.y, Config.map_rect.position.y + half_view.y, Config.map_rect.end.y - half_view.y)

@@ -1,15 +1,39 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cx1w30hjfpnlk"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://cx1w30hjfpnlk"]
 
-[ext_resource type="Texture2D" uid="uid://bvuaptwtc6co0" path="res://tileset.png" id="1_xejxg"]
+[ext_resource type="Texture2D" uid="uid://wvr17ls2kb3j" path="res://sprites/layer_0_topsoil.png" id="1_bsiqr"]
+[ext_resource type="Texture2D" uid="uid://b3a7a8hyod7dj" path="res://sprites/layer_1_clay.png" id="2_cfspl"]
+[ext_resource type="Texture2D" uid="uid://sgyqa4rdujst" path="res://sprites/layer_2_rock.png" id="3_eb2b0"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qs0wv"]
-texture = ExtResource("1_xejxg")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lshu8"]
+texture = ExtResource("1_bsiqr")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rsk6d"]
+texture = ExtResource("2_cfspl")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 1
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ajibx"]
+texture = ExtResource("3_eb2b0")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 2
 
 [resource]
 tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_qs0wv")
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "TopLayer"
+terrain_set_0/terrain_0/color = Color(0.243137, 0.827451, 0.137255, 1)
+terrain_set_0/terrain_1/name = "Clay"
+terrain_set_0/terrain_1/color = Color(0.70182, 0.402148, 0.88194, 1)
+terrain_set_0/terrain_2/name = "Rock"
+terrain_set_0/terrain_2/color = Color(8.60578e-05, 0.347907, 0.987512, 1)
+sources/1 = SubResource("TileSetAtlasSource_lshu8")
+sources/2 = SubResource("TileSetAtlasSource_rsk6d")
+sources/3 = SubResource("TileSetAtlasSource_ajibx")
