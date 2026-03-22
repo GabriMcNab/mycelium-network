@@ -1,23 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://vhvsowhbkhnd"]
+[gd_scene load_steps=6 format=3 uid="uid://vhvsowhbkhnd"]
 
 [ext_resource type="TileSet" uid="uid://cx1w30hjfpnlk" path="res://tileset.tres" id="1_swoeu"]
+[ext_resource type="Script" path="res://game_controller.gd" id="1_ty58b"]
 [ext_resource type="Script" path="res://map_generator.gd" id="2_2dcyh"]
 [ext_resource type="Script" path="res://camera_controller.gd" id="2_qf1ah"]
+[ext_resource type="PackedScene" uid="uid://cf5jjjwugq61q" path="res://entities/mother_fungus.tscn" id="4_1pefy"]
 
 [node name="GameWorld" type="Node2D"]
+script = ExtResource("1_ty58b")
 
-[node name="Map" type="TileMapLayer" parent="."]
+[node name="Map" type="TileMapLayer" parent="." node_paths=PackedStringArray("mother_fungus")]
 tile_set = ExtResource("1_swoeu")
 script = ExtResource("2_2dcyh")
-border_variance_factor = null
+mother_fungus = NodePath("../MotherFungus")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(2010, 1042)
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("2_qf1ah")
-pan_speed = null
-zoom_speed = null
-zoom_smoothing = null
-min_zoom = null
-max_zoom = null
+
+[node name="MotherFungus" parent="." instance=ExtResource("4_1pefy")]

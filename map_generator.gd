@@ -7,8 +7,9 @@ const BOTTOM_LAYER_TERRAIN_ID = 2
 
 # Used to tweak the border irregularity between each layer
 @export_range(0, 0.5) var border_variance_factor: float = 0.2
+@export var mother_fungus: MotherFungus
 
-@onready var tile_pixel_size = 32
+var tile_pixel_size = 32
 
 func _ready() -> void:
       _draw_tiles()

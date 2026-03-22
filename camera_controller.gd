@@ -28,7 +28,7 @@ func _handle_pan(delta: float) -> void:
 
   if (pan_dir != Vector2.ZERO):
     position += pan_dir.normalized() * pan_speed * delta / zoom.x
-    _clamp_position()
+    clamp_position()
 
 func _handle_zoom(delta: float):
   var mouse_position = get_viewport().get_mouse_position()
@@ -53,9 +53,9 @@ func _handle_zoom(delta: float):
   var new_world_position = position + (mouse_position - vp_size / 2) / new_zoom
 
   position += old_world_position - new_world_position
-  _clamp_position()
+  clamp_position()
 
-func _clamp_position() -> void:
+func clamp_position() -> void:
   # Keep the camera within the map boundaries
   var vp_size = get_viewport_rect().size
   var half_view = vp_size / (2.0 * zoom.x)

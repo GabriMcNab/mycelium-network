@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf5jjjwugq61q"]
+
+[ext_resource type="Script" path="res://entities/mother_fungus.gd" id="1_jpkpj"]
+
+[node name="MotherFungus" type="Node2D"]
+script = ExtResource("1_jpkpj")
