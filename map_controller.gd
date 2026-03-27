@@ -1,4 +1,4 @@
-class_name MapGenerator
+class_name MapController
 extends TileMapLayer
 
 const TOP_LAYER_TERRAIN_ID = 0
@@ -10,13 +10,18 @@ const BOTTOM_LAYER_TERRAIN_ID = 2
 @export var mother_fungus: MotherFungus
 
 var tile_pixel_size = 32
+var horizontal_tiles_number: int
+var vertical_tiles_number: int
 
 func _ready() -> void:
-      _draw_tiles()
+  horizontal_tiles_number = int(round(Config.map_rect.size.x / tile_pixel_size))
+  vertical_tiles_number = int(round(Config.map_rect.size.y / tile_pixel_size))
+  _draw_tiles()
+
+func _process(_delta: float) -> void:
+  (material as ShaderMaterial).set_shader_parameter("mouse_position", get_local_mouse_position())
 
 func _draw_tiles():
-  var horizontal_tiles_number = int(round(Config.map_rect.size.x / tile_pixel_size))
-  var vertical_tiles_number = int(round(Config.map_rect.size.y / tile_pixel_size))
   var third = floori(vertical_tiles_number / 3.0)
 
   # Use noise to generate an irregular border between layers

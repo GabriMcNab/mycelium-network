@@ -3,12 +3,14 @@ class_name GameController
 
 @onready var camera: CameraController = $Camera2D
 @onready var mother_fungus: MotherFungus = $MotherFungus
-@onready var tilemap: TileMapLayer = $Map
+@onready var tilemap: MapController = $Map
 
 func _ready() -> void:
-  mother_fungus.position.x = randf_range(Config.map_rect.size.x / 2 - 320, Config.map_rect.size.x / 2 + 320)
-  mother_fungus.position.y = randf_range(160, 320)
+  var mother_fungus_position = Vector2.ZERO
+  mother_fungus_position.x = randf_range(tilemap.horizontal_tiles_number / 2 - 10, tilemap.horizontal_tiles_number / 2 + 10)
+  mother_fungus_position.y = randi_range(2, 10)
 
+  mother_fungus.position = tilemap.map_to_local(mother_fungus_position)
   camera.position = mother_fungus.position
   camera.clamp_position()
 
