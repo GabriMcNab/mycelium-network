@@ -20,7 +20,7 @@ Check them off as you go.
   Create a TileMap with three tile types (Topsoil, Clay, Rock). Fill it procedurally in `_ready()` based on depth bands — top 30%, middle 40%, bottom 30%. Use distinct brown/grey/slate colours from the GDD palette.
   *Done when: you see three horizontal colour bands filling the screen.*
 
-- [ ] **Day 3 — Config autoload + Mother Fungus**
+- [x] **Day 3 — Config autoload + Mother Fungus**
   Create `Config.gd` as an autoload singleton. Paste in every tuning constant from GDD Section 17. Place the Mother Fungus as a visible node (a simple circle) in upper-center Topsoil. Implement click detection — print the clicked tile coordinate to console.
   *Done when: clicking anywhere prints a tile coordinate, and the Mother Fungus is visible.*
 
