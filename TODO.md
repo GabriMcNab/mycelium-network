@@ -24,7 +24,7 @@ Check them off as you go.
   Create `Config.gd` as an autoload singleton. Paste in every tuning constant from GDD Section 17. Place the Mother Fungus as a visible node (a simple circle) in upper-center Topsoil. Implement click detection — print the clicked tile coordinate to console.
   *Done when: clicking anywhere prints a tile coordinate, and the Mother Fungus is visible.*
 
-- [ ] **Day 4 — First straight-line hypha segment**
+- [x] **Day 4 — First straight-line hypha segment**
   On left-click near the Mother Fungus (or any existing tip), create a Line2D from the tip to the clicked tile. Track segments in an array of dictionaries `{from, to, cost, alive}`. Deduct Sugar (just a variable for now, no HUD yet). Prevent growth if Sugar is insufficient.
   *Done when: you can click to chain 10+ segments outward and growth stops when Sugar runs out.*
 
